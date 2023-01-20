@@ -55,7 +55,7 @@
         </nav>
       </header>
 
-      <section id="corpo">
+      <section>
         <article id="noticia-principal">
           <header id="cabecalho-artigo">
             <hgroup>
@@ -66,27 +66,151 @@
             </hgroup>
           </header>
 
-          <form>
-            <fieldset>
+          <form
+            method="post"
+            id="fcontato"
+            action="mailto:contato@cursoemvideo.com"
+          >
+            <fieldset id="usuario">
               <legend>Identificação do Usuário</legend>
-              Nome: Senha: E-mail: Sexo: - Masculino - Feminino Data de
-              Nascimento:
+              <p>
+                <label for="cnome"> Nome:</label
+                ><input
+                  type="text"
+                  name="tnome"
+                  id="cnome"
+                  size="20"
+                  maxlength="30"
+                  placeholder="Nome Completo"
+                />
+              </p>
+
+              <p>
+                Senha:<input
+                  type="password"
+                  name="tsenha"
+                  id="csenha"
+                  size="8"
+                  maxlength="8"
+                  placeholder="8 digitos"
+                />
+              </p>
+              <p>
+                E-mail:<input
+                  type="email"
+                  name="tmail"
+                  id="cmail"
+                  size="20"
+                  maxlength="40"
+                />
+              </p>
             </fieldset>
 
-            <fieldset>
+            <fieldset id="sexo">
+              <legend>Sexo</legend>
+              <input type="radio" name="tsexo" id="cmasc" checked />
+              <label for="cmasc"> Masculino</label><br />
+              <input type="radio" name="tsexo" id="cfem" />
+              <label for="cfem"> Feminino</label>
+            </fieldset>
+            <p>
+              Data de Nascimento:<input type="date" name="tnasc" id="cnasc" />
+            </p>
+
+            <fieldset id="endereco">
               <legend>Endereço do Usuário</legend>
-              Logradouro: Número: Estado: Cidade:
+
+              <p>
+                Logradouro:<input
+                  type="text"
+                  name="trua"
+                  id="crua"
+                  size="13"
+                  maxlength="30"
+                  placeholder="Rua, Av, Trav, ..."
+                />
+              </p>
+
+              <p>
+                Número:<input
+                  type="number"
+                  name="tnum"
+                  id="cnum"
+                  min="0"
+                  max="9999"
+                />
+              </p>
+
+              <select name="test" id="cest">
+                <label for="cest">Estado:</label>
+
+                <optgroup label="Região do Sudeste">
+                  <option value="RJ">Rio de Janeiro</option>
+                  <option value="SP">São Paulo</option>
+                  <option value="MG">Mina Gerais</option>
+                </optgroup>
+
+                <optgroup label="Região Sul">
+                  <option value="PR">Paraná</option>
+                  <option value="SC">Santa Catarina</option>
+                  <option value="RS">Rio Grando do Sul</option>
+                </optgroup>
+              </select>
+
+              <p><label for="ccid">Cidade:</label></p>
+              <input
+                type="text"
+                name="tcid"
+                id="ccid"
+                size="20"
+                maxlength="40"
+                placeholder="Sua cidade"
+                list="cidades"
+              />
+              <datalist id="cidades">
+                <option value="Rio de Janeiro"></option>
+                <option value="Nova iguaçu"></option>
+                <option value="Niterói"></option>
+                <option value="Belford Roxo"></option>
+              </datalist>
             </fieldset>
 
-            <fieldset>
+            <fieldset id="mensagem">
               <legend>Mensagem do Usuário</legend>
-              Grau de Urgência: Mensagem:
+              <p>
+                <label for="curg">Grau de Urgência:</label>
+                Min<input
+                  type="range"
+                  name="turg"
+                  id="curg"
+                  min="0"
+                  max="10"
+                  step="2"
+                />
+                Máx
+              </p>
+              <p>
+                <label for="cmsg">Mensagem:</label>
+                <textarea
+                  name="tmsg"
+                  id="cmsg"
+                  cols="45"
+                  rows="5"
+                  placeholder="Deixe aqui tua mensagem"
+                ></textarea>
+              </p>
             </fieldset>
 
-            <fieldset>
+            <fieldset id="pedido">
               <legend>Quero um Google Glass</legend>
-              Gostaria de adquirir um Google Glass quando disponível Cor:
-              Quantidade: Preço Total:R$
+              <p>
+                <label for="cpeg"
+                  >Gostaria de adquirir um Google Glass quando disponível</label
+                >
+              </p>
+              <p><label for="ccor">Cor:</label></p>
+              <p><label for="cqtd">Quantidade:</label></p>
+              <p><label for="ctot">Preço Total: R$</label></p>
             </fieldset>
 
             [BOTÃO ENVIAR]

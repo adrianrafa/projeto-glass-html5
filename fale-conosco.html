@@ -7,6 +7,13 @@
     <link rel="stylesheet" href="_css/form.css" />
   </head>
   <script src="_javascript/funcoes.js"></script>
+  <script>
+    function calc_total() {
+      var qtd = parseInt(document.getElementById("cqtd").value);
+      tot = qtd * 1500;
+      document.getElementById("ctot").value = tot;
+    }
+  </script>
   <body>
     <div id="interface">
       <header id="cabecalho">
@@ -62,7 +69,7 @@
               <h3>Fale Conosco > Contato</h3>
               <h1>Formulário de Contatos</h1>
               <h2>Por Gustavo Guanabara</h2>
-              <h3 class="direita">Atualizado em 01/Maio/2013</h3>
+              <h3 class="direita">Atualizado em 22/Dezembro/2022</h3>
             </hgroup>
           </header>
 
@@ -70,6 +77,7 @@
             method="post"
             id="fcontato"
             action="mailto:contato@cursoemvideo.com"
+            oninput="calc_total();"
           >
             <fieldset id="usuario">
               <legend>Identificação do Usuário</legend>
@@ -104,18 +112,18 @@
                   maxlength="40"
                 />
               </p>
-            </fieldset>
 
-            <fieldset id="sexo">
-              <legend>Sexo</legend>
-              <input type="radio" name="tsexo" id="cmasc" checked />
-              <label for="cmasc"> Masculino</label><br />
-              <input type="radio" name="tsexo" id="cfem" />
-              <label for="cfem"> Feminino</label>
+              <fieldset id="sexo">
+                <legend>Sexo</legend>
+                <input type="radio" name="tsexo" id="cmasc" checked />
+                <label for="cmasc"> Masculino</label><br />
+                <input type="radio" name="tsexo" id="cfem" />
+                <label for="cfem"> Feminino</label>
+              </fieldset>
+              <p>
+                Data de Nascimento:<input type="date" name="tnasc" id="cnasc" />
+              </p>
             </fieldset>
-            <p>
-              Data de Nascimento:<input type="date" name="tnasc" id="cnasc" />
-            </p>
 
             <fieldset id="endereco">
               <legend>Endereço do Usuário</legend>
@@ -204,23 +212,50 @@
             <fieldset id="pedido">
               <legend>Quero um Google Glass</legend>
               <p>
-                <label for="cpeg"
+                <input type="checkbox" name="tped" id="cped" checked />
+                <label for="cped"
                   >Gostaria de adquirir um Google Glass quando disponível</label
                 >
               </p>
-              <p><label for="ccor">Cor:</label></p>
-              <p><label for="cqtd">Quantidade:</label></p>
-              <p><label for="ctot">Preço Total: R$</label></p>
+              <p>
+                <label for="ccor">Cor:</label>
+                <input type="color" name="tcor" id="ccor" value="#0000ff" />
+              </p>
+              <p>
+                <label for="cqtd">Quantidade:</label>
+                <input
+                  type="number"
+                  name="tqtd"
+                  id="cqtd"
+                  min="0"
+                  max="5"
+                  value="0"
+                />
+              </p>
+              <p>
+                <label for="ctot">Preço Total: R$</label>
+                <input
+                  type="text"
+                  name="ttot"
+                  id="ctot"
+                  placeholder="Total a pagar"
+                  readonly
+                />
+              </p>
             </fieldset>
 
-            [BOTÃO ENVIAR]
+            <input
+              type="image"
+              name="tenviar"
+              src="_imagens/botao-enviar.png"
+            />
           </form>
         </article>
       </section>
 
       <footer id="rodape">
         <p>
-          Copyright 2013 - by Gustavo Guanabara
+          Copyright 2022 - by Adrian Rafael
           <br />
           <a href="http://faccebook.com/cursosemvideo" target="_blank">
             Facebook </a
